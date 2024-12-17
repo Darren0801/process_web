@@ -1,0 +1,119 @@
+// 页面基础框架 el-main:11,root:12,map:13,map-nav-warp:14
+// 导航页：
+// header:z-index<10
+// map:z-index<20
+// 两侧页面:z-index<30
+// 弹出框:z-index<40
+
+%h100 {
+  height: 100%;
+}
+
+html,
+body,
+th,
+td,
+ul,
+ol,
+p,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+pre,
+code,
+fieldset,
+blockquote,
+legend * {
+  font-family: 'Source Han Sans CN', 'Microsoft YaHei', Arial, sans-serif, 'PingFang SC';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  @extend %h100;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 14px; // 修改为 px，因为 body 的 font-size 应该是 px
+}
+
+html {
+  -webkit-text-size-adjust: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+div,
+a,
+select,
+input,
+button,
+textarea {
+  // padding: 0;
+  // border: 0;
+  // outline: none;
+  // color: inherit;
+  // font-family: inherit;
+  // font-size: 100%;
+  // background-color: transparent;
+  // box-sizing: border-box;
+}
+
+tbody tr,
+button,
+.btn,
+.button,
+[type='button'] {
+  cursor: pointer;
+}
+
+#app,
+.h100 {
+  @extend %h100;
+  background: #f2f3f5;
+}
+
+#app {
+  background-size: contain;
+  overflow: hidden;
+}
+
+.root {
+  @extend %h100;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.el-dialog__header {
+  border-bottom: 2px solid #ebebeb;
+}
+
+.el-dialog__title::before {
+  content: '';
+  display: inline-block;
+  width: 0.29rem; // 修改为 rem 单位
+  height: 0.26rem;
+  background: #1783f5;
+  margin-right: 0.1rem;
+  border-radius: 4px;
+  vertical-align: top;
+}

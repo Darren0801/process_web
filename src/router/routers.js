@@ -1,9 +1,16 @@
 const routes = [
     {
       path: '/',
-      redirect: '/Main',
+      // redirect: '/home',
       component: () => import('../views/Main.vue'),
     },
+    {
+      path: '/404',
+      name: '404',
+      component: () => import('../views/HomePage/HomePage.vue'),
+    },
+    
+ 
     // {
     //   title: '设施事件处置',
     //   path: '/incident',
