@@ -2,31 +2,43 @@
   <el-container style="height: 100%">
     <el-aside width="10rem" class="aside-container" >
       <el-menu
-        :default-active="menuActive"
         class="aside-menu"
-        @select="menuActiveSelect"
-        @open="handleOpen"
-        @close="handleClose"
+        :default-active="$route.path"
+        router
       >
-        <el-submenu index="/information">
+        <el-submenu index="/homepage">
           <template slot="title">
             <span>首页</span>
           </template>
-          <el-menu-item index="/information/road">首页一</el-menu-item>
-          <el-menu-item index="/information/bridge">首页二</el-menu-item>
+          <el-menu-item index="/homepage/homeOne">首页一</el-menu-item>
+          <el-menu-item index="/homepage/homeTwo">首页二</el-menu-item>
+        </el-submenu>
+        <el-submenu index="/processdesign">
+          <template slot="title">
+            <span>流程管理</span>
+          </template>
+          <el-menu-item index="/processdesign/ProcessList">流程列表</el-menu-item>
+          <el-menu-item index="/processdesign/ProcessDetail">流程详情</el-menu-item>
         </el-submenu>
       </el-menu>
     </el-aside>
     <el-container>
-      <el-header>Header</el-header>
-      <el-main>Main</el-main>
+      <el-header  class="header-container"
+      style="height: 4rem">Header</el-header>
+      <el-main>
+        <el-row class="main-content">
+          <el-col :span="24">
+            <router-view />
+          </el-col>
+        </el-row>
+      </el-main>
     </el-container>
   </el-container>
 </template>
 
 <script>
 export default {
-  name: "HomePage",
+   name: 'MainPage',
   data() {
     return {
       menuActive: "",
@@ -44,12 +56,12 @@ export default {
 
 <style lang="scss" scoped>
 .header-container {
-  height: 0.8rem;
-  background: linear-gradient(180deg, #0966c8 0%, #409eff 100%);
+  height: 10rem;
+  background: #f3f3f3;
 }
 .header-content {
   padding: 0 0.12rem;
-  color: #fff;
+  color: #f3f3f3;
   .logo {
     float: left;
     width: 0.56rem;
@@ -151,8 +163,8 @@ export default {
   }
   .aside-menu .el-menu-item {
     width: 100%;
-    height: 0.48rem;
-    line-height: 0.48rem;
+    height: 4rem;
+    line-height:4rem;
     color: rgba(0, 0, 0, 0.65);
     border: none;
     cursor: pointer;
