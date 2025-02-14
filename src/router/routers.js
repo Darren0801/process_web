@@ -38,7 +38,7 @@ const routes = [
         {
           title: '首页二',
           path: 'ProcessDetail',
-          name: 'ProcessDetail',
+          name: 'process-detail',
           component: () => import('../views/processdesign/ProcessDetail.vue'),
         },
       ],

@@ -1,5 +1,6 @@
 // 公用数据
 const state = {
-  timerCountdown: 11,
+  timerCountdown: '',
+  bpmnXmlStrItem:'',
 };
 export default state;

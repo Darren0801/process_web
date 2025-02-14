@@ -22,10 +22,11 @@
         </el-submenu>
       </el-menu>
     </el-aside>
+
     <el-container>
       <el-header  class="header-container"
-      style="height: 4rem">Header</el-header>
-      <el-main>
+      style="height: 4rem;line-height: 4rem;background-color: #409EFF;color: #fff;">闵行流程控制系统</el-header>
+      <el-main class="main-container">
         <el-row class="main-content">
           <el-col :span="24">
             <router-view />
@@ -188,7 +189,7 @@ export default {
     font-size: 0.16rem;
     padding-left: 0.08rem;
     background: #fff;
-    box-sizing: border-box;
+    box-sizing: border-box; 
   }
   .el-breadcrumb__inner:first-of-type {
     font-weight: 700;
@@ -199,5 +200,9 @@ export default {
     color: #97a8be;
     cursor: text;
   }
+}
+.main-container{
+  padding: 1rem;
+  border-radius:4rem ;
 }
 </style>

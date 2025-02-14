@@ -33,6 +33,12 @@ export default {
   components: {
       panel
   },
+  props:{
+      xmlStr:{
+          type: String,
+          default: ''
+      }
+  },
   data(){
       return{
           bpmnModeler: null,
@@ -72,7 +78,7 @@ export default {
   },
   methods:{
       createNewDiagram() {
-          const bpmnXmlStr = `
+          const xmlStr = `
           <?xml version="1.0" encoding="UTF-8"?>
               <bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
               <bpmn2:process id="process1567044459787" name="流程1567044459787">
@@ -175,8 +181,9 @@ export default {
               </bpmndi:BPMNDiagram>
               </bpmn2:definitions>
           `;
+          console.log('子组件接受--',this.xmlStr)
           // 将字符串转换成图显示出来
-          this.bpmnModeler.importXML(bpmnXmlStr, err => {
+          this.bpmnModeler.importXML(xmlStr, err => {
               if (err) {
                   console.error(err);
               } else {
