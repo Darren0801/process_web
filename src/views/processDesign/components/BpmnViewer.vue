@@ -251,19 +251,19 @@ export default {
 .container {
   position: absolute;
   background-color: #ffffff;
-  width: 97%;
-  height: 570px;
+  width: 100%;
+  height: 100%;
   .bpmn-canvas {
       width: 100%;
-      height: 570px;
+      height: 100%;
   }
   .panel {
       position: absolute;
-      right: 0;
+      right: 20px;
       top: 50px;
       width: 300px;
   }
-  .bjs-powered-by {
+::v-deep .bjs-powered-by {
       display: none;
   }
   .toolbar {
